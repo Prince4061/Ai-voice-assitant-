@@ -2,8 +2,8 @@
 import pyttsx3
 import speech_recognition as sr 
 import os 
-
 from open import OpenExe 
+import webbrowser
 
 # sabhi kaam ki chijo ko nikala 
 engine = pyttsx3.init()
@@ -57,19 +57,13 @@ if __name__ == "__main__":
             OpenExe(query)
         elif "you are genius" in query:
             speak("thankyou but real genius is prince.")
-        elif "play romantic" in query:
-            speak("ok boss, playing song")
-            music_dir = "C:\\Users\\prince\\Desktop\\songs"
-            songs = os.listdir(music_dir)
-            os.startfile(os.path.join(music_dir,songs[0]))
 
-        elif "play motivational" in query:
-             speak("ok boss, playing song")
-             music_dir = "C:\\Users\\prince\\Desktop\\songs"
-             songs = os.listdir(music_dir)
-             os.startfile(os.path.join(music_dir,songs[1]))
+        elif "play song" in query:
+            speak("ok boss playing the song")
+            folder_dir = "C:\\Users\\prince\\Desktop\\songs"
+            songs_list = os.listdir(folder_dir)
+            os.startfile(os.path.join(folder_dir,songs_list[1]))
 
-            
         elif "bye-bye" in query or "quit" in query:
             speak("Goodbye boss!")
             break
